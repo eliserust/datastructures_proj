@@ -1,5 +1,5 @@
 site_name: Rust Project Deliverable 1
-site_url: http://127.0.0.1:8000/
+site_url: https://eliserust.github.io/datastructures_proj/
 
 nav:
     - Home: index.md
@@ -12,13 +12,5 @@ theme: "readthedocs"
 
 plugins:
   - mkdocstrings
-  - mermaid2
-
-markdown_extensions:
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid2
-          class: mermaid2
-          format: !!python/name:pymdownx.superfences.fence_code_format
 
 
