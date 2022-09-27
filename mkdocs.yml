@@ -4,7 +4,6 @@ site_url: https://eliserust.github.io/datastructures_proj/
 nav:
     - Home: index.md
     - Class List: classlist.md
-    - Class Index: classindex.md
     - Class Hierarchy: hierarchy.md
     - Class Members: members.md
   
