@@ -8,7 +8,6 @@ mkdocstrings, and the Material for MkDocs theme.
 
 1. [Class List](classlist.md)
 2. [Class Hierarchy](hierarchy.md)
-3. [Class Members](members.md)
 
 Quickly find what you're looking for depending on
 your use case by looking at the different pages.

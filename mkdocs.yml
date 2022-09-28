@@ -5,7 +5,6 @@ nav:
     - Home: index.md
     - Class List: classlist.md
     - Class Hierarchy: hierarchy.md
-    - Class Members: members.md
   
 theme: "readthedocs"
 
