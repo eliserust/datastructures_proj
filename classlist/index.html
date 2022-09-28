@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="http://127.0.0.1:8000/classlist/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://eliserust.github.io/datastructures_proj/classlist/" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
     <title>Class List - Rust Project Deliverable 1</title>
     <link rel="stylesheet" href="../css/theme.css" />
@@ -15,7 +15,7 @@
         // Current page data
         var mkdocs_page_name = "Class List";
         var mkdocs_page_input_path = "classlist.md";
-        var mkdocs_page_url = "/classlist/";
+        var mkdocs_page_url = "/datastructures_proj/classlist/";
       </script>
     
     <script src="../js/jquery-3.6.0.min.js" defer></script>
@@ -48,15 +48,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../classindex/">Class Index</a>
-                </li>
-              </ul>
-              <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../hierarchy/">Class Hierarchy</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../members/">Class Members</a>
                 </li>
               </ul>
       </div>
@@ -101,168 +93,6 @@
 
 
 
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="scripts.class_framework.ClassifierAlgorithm" class="doc doc-heading">
-        <code>ClassifierAlgorithm</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-
-  
-      <p>Base class to define the attributes and member methods for ClassifierAlgorithm</p>
-<p>This is an abstract class --&gt; Subclasses include simplekNNClassifier &amp; kdTreeKNNClassifier
-Subclasses define</p>
-
-
-        <details class="quote">
-          <summary>Source code in <code>scripts/class_framework.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
-<span class="normal">48</span>
-<span class="normal">49</span>
-<span class="normal">50</span>
-<span class="normal">51</span>
-<span class="normal">52</span>
-<span class="normal">53</span>
-<span class="normal">54</span>
-<span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span>
-<span class="normal">58</span>
-<span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span>
-<span class="normal">62</span>
-<span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ClassifierAlgorithm</span><span class="p">:</span>
-    <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Base class to define the attributes and member methods for ClassifierAlgorithm</span>
-
-<span class="sd">    This is an abstract class --&gt; Subclasses include simplekNNClassifier &amp; kdTreeKNNClassifier</span>
-<span class="sd">    Subclasses define</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Initialize object of class ClassifierAlgorithm&#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of superclass ClassifierAlgorithm has been initialized.&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Train ClassifierAlgorithm using training data&#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1"> has been trained for the classifier algorithm.&#39;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Test ClassifierAlgorithm on test data&#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The classifier algorithm has been tested with </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-        </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.ClassifierAlgorithm.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Initialize object of class ClassifierAlgorithm</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">55</span>
-<span class="normal">56</span>
-<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Initialize object of class ClassifierAlgorithm&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of superclass ClassifierAlgorithm has been initialized.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.ClassifierAlgorithm.test" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Test ClassifierAlgorithm on test data</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
-<span class="normal">64</span>
-<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Test ClassifierAlgorithm on test data&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The classifier algorithm has been tested with </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.ClassifierAlgorithm.train" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Train ClassifierAlgorithm using training data</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
-<span class="normal">60</span>
-<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Train ClassifierAlgorithm using training data&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1"> has been trained for the classifier algorithm.&#39;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div>
 
 <div class="doc doc-object doc-class">
 
@@ -392,33 +222,6 @@ Subclasses define type of DataSet, instantiate the DataSet class, and
 
 
 
-<h3 id="scripts.class_framework.DataSet.__load" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Load dataset from external source as object from class DataSet</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
-<span class="normal">35</span>
-<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class DataSet&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of superclass DataSet has been loaded.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
 <h3 id="scripts.class_framework.DataSet.__readFromCSV" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
@@ -436,6 +239,33 @@ Subclasses define type of DataSet, instantiate the DataSet class, and
 <span class="normal">32</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class DataSet&#39;&#39;&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of superclass DataSet has been read in from CSV&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.DataSet.__load" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Load dataset from external source as object from class DataSet</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class DataSet&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of superclass DataSet has been loaded.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -490,6 +320,168 @@ Subclasses define type of DataSet, instantiate the DataSet class, and
 <span class="normal">44</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset&#39;&#39;&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of superclass DataSet has been explored.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="scripts.class_framework.ClassifierAlgorithm" class="doc doc-heading">
+        <code>ClassifierAlgorithm</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+
+  
+      <p>Base class to define the attributes and member methods for ClassifierAlgorithm</p>
+<p>This is an abstract class --&gt; Subclasses include simplekNNClassifier &amp; kdTreeKNNClassifier
+Subclasses define</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>scripts/class_framework.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">ClassifierAlgorithm</span><span class="p">:</span>
+    <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    Base class to define the attributes and member methods for ClassifierAlgorithm</span>
+
+<span class="sd">    This is an abstract class --&gt; Subclasses include simplekNNClassifier &amp; kdTreeKNNClassifier</span>
+<span class="sd">    Subclasses define</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Initialize object of class ClassifierAlgorithm&#39;&#39;&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of superclass ClassifierAlgorithm has been initialized.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Train ClassifierAlgorithm using training data&#39;&#39;&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1"> has been trained for the classifier algorithm.&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Test ClassifierAlgorithm on test data&#39;&#39;&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The classifier algorithm has been tested with </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.ClassifierAlgorithm.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initialize object of class ClassifierAlgorithm</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Initialize object of class ClassifierAlgorithm&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of superclass ClassifierAlgorithm has been initialized.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.ClassifierAlgorithm.train" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Train ClassifierAlgorithm using training data</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Train ClassifierAlgorithm using training data&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1"> has been trained for the classifier algorithm.&#39;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.ClassifierAlgorithm.test" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Test ClassifierAlgorithm on test data</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Test ClassifierAlgorithm on test data&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The classifier algorithm has been tested with </span><span class="si">{</span><span class="n">data</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -677,38 +669,6 @@ relevant accuracy metrics and evaluation plots.</p>
 
 
 
-<h3 id="scripts.class_framework.Experiment.confusionMatrix" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">confusionMatrix</span><span class="p">()</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Generates a confusion matrix for a given classifier, illustrating how many predictions
-were correct by class.</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
-<span class="normal">103</span>
-<span class="normal">104</span>
-<span class="normal">105</span>
-<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Generates a confusion matrix for a given classifier, illustrating how many predictions</span>
-<span class="sd">    were correct by class.</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The confusion matrix has been generated.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
 <h3 id="scripts.class_framework.Experiment.runCrossVal" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">runCrossVal</span><span class="p">(</span><span class="n">k</span><span class="p">)</span></code>
 
@@ -769,6 +729,38 @@ to compare the effectiveness of different classifiers.</p>
 
 </div>
 
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.Experiment.confusionMatrix" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">confusionMatrix</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Generates a confusion matrix for a given classifier, illustrating how many predictions
+were correct by class.</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span>
+<span class="normal">105</span>
+<span class="normal">106</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">confusionMatrix</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Generates a confusion matrix for a given classifier, illustrating how many predictions</span>
+<span class="sd">    were correct by class.</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The confusion matrix has been generated.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
 
 
   </div>
@@ -781,8 +773,8 @@ to compare the effectiveness of different classifiers.</p>
 
 
 
-<h2 id="scripts.class_framework.QualDataSet" class="doc doc-heading">
-        <code>QualDataSet</code>
+<h2 id="scripts.class_framework.TimeSeriesDataSet" class="doc doc-heading">
+        <code>TimeSeriesDataSet</code>
 
 
 </h2>
@@ -790,67 +782,67 @@ to compare the effectiveness of different classifiers.</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="#scripts.class_framework.DataSet">DataSet</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="../members/#scripts.class_framework.DataSet">DataSet</a></code></p>
 
   
-      <p>Subclass of base class DataSet for Qualitative Data types</p>
+      <p>Subclass of base class DataSet for data of type Time Series</p>
 
 
         <details class="quote">
           <summary>Source code in <code>scripts/class_framework.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">229</span>
-<span class="normal">230</span>
-<span class="normal">231</span>
-<span class="normal">232</span>
-<span class="normal">233</span>
-<span class="normal">234</span>
-<span class="normal">235</span>
-<span class="normal">236</span>
-<span class="normal">237</span>
-<span class="normal">238</span>
-<span class="normal">239</span>
-<span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span>
-<span class="normal">245</span>
-<span class="normal">246</span>
-<span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span>
-<span class="normal">251</span>
-<span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span>
-<span class="normal">257</span>
-<span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">QualDataSet</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Subclass of base class DataSet for Qualitative Data types &#39;&#39;&#39;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
+<span class="normal">110</span>
+<span class="normal">111</span>
+<span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span>
+<span class="normal">119</span>
+<span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span>
+<span class="normal">126</span>
+<span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span>
+<span class="normal">131</span>
+<span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span>
+<span class="normal">137</span>
+<span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TimeSeriesDataSet</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Subclass of base class DataSet for data of type Time Series &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Instantiate object of class QualDataSet.</span>
+<span class="sd">        Instantiate object of class TimeSeriesDataSet.</span>
 <span class="sd">        Inherited from base class DataSet</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QualDataSet has been instantiated&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass TimeSeriesDataSet has been instantiated&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Read in QualDataSet from existing .csv file.</span>
+<span class="sd">        Read in TimeSeriesDataSet from existing CSV.</span>
 <span class="sd">        Override existing DataSet method</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QualDataSet</span>
+        <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class TimeSeriesDataSet</span>
 <span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
@@ -858,13 +850,13 @@ to compare the effectiveness of different classifiers.</p>
         <span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">        Clean the dataset to appropriate standards</span>
 <span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been cleaned.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
 <span class="sd">        Override existing DataSet method</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been explored.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -884,7 +876,7 @@ to compare the effectiveness of different classifiers.</p>
 
 
 
-<h3 id="scripts.class_framework.QualDataSet.__init__" class="doc doc-heading">
+<h3 id="scripts.class_framework.TimeSeriesDataSet.__init__" class="doc doc-heading">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
@@ -892,24 +884,24 @@ to compare the effectiveness of different classifiers.</p>
 
   <div class="doc doc-contents ">
   
-      <p>Instantiate object of class QualDataSet.
+      <p>Instantiate object of class TimeSeriesDataSet.
 Inherited from base class DataSet</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">232</span>
-<span class="normal">233</span>
-<span class="normal">234</span>
-<span class="normal">235</span>
-<span class="normal">236</span>
-<span class="normal">237</span>
-<span class="normal">238</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
+<span class="normal">113</span>
+<span class="normal">114</span>
+<span class="normal">115</span>
+<span class="normal">116</span>
+<span class="normal">117</span>
+<span class="normal">118</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Instantiate object of class QualDataSet.</span>
+<span class="sd">    Instantiate object of class TimeSeriesDataSet.</span>
 <span class="sd">    Inherited from base class DataSet</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QualDataSet has been instantiated&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass TimeSeriesDataSet has been instantiated&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -920,37 +912,7 @@ Inherited from base class DataSet</p>
 
 
 
-<h3 id="scripts.class_framework.QualDataSet.__load" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Load dataset from external source as object from class QualDataSet
-Override existing DataSet method</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">247</span>
-<span class="normal">248</span>
-<span class="normal">249</span>
-<span class="normal">250</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QualDataSet</span>
-<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.QualDataSet.__readFromCSV" class="doc doc-heading">
+<h3 id="scripts.class_framework.TimeSeriesDataSet.__readFromCSV" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
@@ -958,19 +920,19 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
   
-      <p>Read in QualDataSet from existing .csv file.
+      <p>Read in TimeSeriesDataSet from existing CSV.
 Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
-<span class="normal">241</span>
-<span class="normal">242</span>
-<span class="normal">243</span>
-<span class="normal">244</span>
-<span class="normal">245</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">120</span>
+<span class="normal">121</span>
+<span class="normal">122</span>
+<span class="normal">123</span>
+<span class="normal">124</span>
+<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Read in QualDataSet from existing .csv file.</span>
+<span class="sd">    Read in TimeSeriesDataSet from existing CSV.</span>
 <span class="sd">    Override existing DataSet method</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -984,218 +946,7 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.QualDataSet.clean" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">clean</span><span class="p">()</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Clean the dataset to appropriate standards
-Override existing DataSet method</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">252</span>
-<span class="normal">253</span>
-<span class="normal">254</span>
-<span class="normal">255</span>
-<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Clean the dataset to appropriate standards</span>
-<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.QualDataSet.explore" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">explore</span><span class="p">()</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Conduct basic exploratory analysis on dataset
-Override existing DataSet method</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">258</span>
-<span class="normal">259</span>
-<span class="normal">260</span>
-<span class="normal">261</span>
-<span class="normal">262</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
-<span class="sd">    Override existing DataSet method</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-
-
-  </div>
-
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h2 id="scripts.class_framework.QuantDataSet" class="doc doc-heading">
-        <code>QuantDataSet</code>
-
-
-</h2>
-
-
-  <div class="doc doc-contents ">
-      <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="#scripts.class_framework.DataSet">DataSet</a></code></p>
-
-  
-      <p>Subclass of base class DataSet for Quantitative Data types</p>
-
-
-        <details class="quote">
-          <summary>Source code in <code>scripts/class_framework.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">193</span>
-<span class="normal">194</span>
-<span class="normal">195</span>
-<span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span>
-<span class="normal">203</span>
-<span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span>
-<span class="normal">210</span>
-<span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span>
-<span class="normal">215</span>
-<span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span>
-<span class="normal">221</span>
-<span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">QuantDataSet</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Subclass of base class DataSet for Quantitative Data types &#39;&#39;&#39;</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Instantiate object of class QuantDataSet.</span>
-<span class="sd">        Inherited from base class DataSet</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QuantDataSet has been instantiated&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Read in QuantDataSet from existing .csv file.</span>
-<span class="sd">        Override existing DataSet method</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QuantDataSet</span>
-<span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Clean the dataset to appropriate standards</span>
-<span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
-<span class="sd">        Override existing DataSet method</span>
-<span class="sd">        &#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-        </details>
-
-  
-
-  <div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.QuantDataSet.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Instantiate object of class QuantDataSet.
-Inherited from base class DataSet</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">196</span>
-<span class="normal">197</span>
-<span class="normal">198</span>
-<span class="normal">199</span>
-<span class="normal">200</span>
-<span class="normal">201</span>
-<span class="normal">202</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Instantiate object of class QuantDataSet.</span>
-<span class="sd">    Inherited from base class DataSet</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QuantDataSet has been instantiated&quot;</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.QuantDataSet.__load" class="doc doc-heading">
+<h3 id="scripts.class_framework.TimeSeriesDataSet.__load" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
@@ -1203,16 +954,16 @@ Inherited from base class DataSet</p>
 
   <div class="doc doc-contents ">
   
-      <p>Load dataset from external source as object from class QuantDataSet
+      <p>Load dataset from external source as object from class TimeSeriesDataSet
 Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">211</span>
-<span class="normal">212</span>
-<span class="normal">213</span>
-<span class="normal">214</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QuantDataSet</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
+<span class="normal">128</span>
+<span class="normal">129</span>
+<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class TimeSeriesDataSet</span>
 <span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
@@ -1225,41 +976,7 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.QuantDataSet.__readFromCSV" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Read in QuantDataSet from existing .csv file.
-Override existing DataSet method</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">204</span>
-<span class="normal">205</span>
-<span class="normal">206</span>
-<span class="normal">207</span>
-<span class="normal">208</span>
-<span class="normal">209</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Read in QuantDataSet from existing .csv file.</span>
-<span class="sd">    Override existing DataSet method</span>
-<span class="sd">    &#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.QuantDataSet.clean" class="doc doc-heading">
+<h3 id="scripts.class_framework.TimeSeriesDataSet.clean" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">clean</span><span class="p">()</span></code>
 
 </h3>
@@ -1272,15 +989,15 @@ Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">216</span>
-<span class="normal">217</span>
-<span class="normal">218</span>
-<span class="normal">219</span>
-<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
+<span class="normal">133</span>
+<span class="normal">134</span>
+<span class="normal">135</span>
+<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">    Clean the dataset to appropriate standards</span>
 <span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been cleaned.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1291,7 +1008,7 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.QuantDataSet.explore" class="doc doc-heading">
+<h3 id="scripts.class_framework.TimeSeriesDataSet.explore" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">explore</span><span class="p">()</span></code>
 
 </h3>
@@ -1304,15 +1021,15 @@ Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">222</span>
-<span class="normal">223</span>
-<span class="normal">224</span>
-<span class="normal">225</span>
-<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">138</span>
+<span class="normal">139</span>
+<span class="normal">140</span>
+<span class="normal">141</span>
+<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
 <span class="sd">    Override existing DataSet method</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been explored.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1340,7 +1057,7 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="#scripts.class_framework.DataSet">DataSet</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="../members/#scripts.class_framework.DataSet">DataSet</a></code></p>
 
   
       <p>Subclass of base class DataSet for data of type Text</p>
@@ -1528,36 +1245,6 @@ Inherited from base class DataSet</p>
 
 
 
-<h3 id="scripts.class_framework.TextDataSet.__load" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Load dataset from external source as object from class TextDataSet
-Override existing DataSet method</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">175</span>
-<span class="normal">176</span>
-<span class="normal">177</span>
-<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class TextDataSet</span>
-<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
 <h3 id="scripts.class_framework.TextDataSet.__readFromTXT" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">__readFromTXT</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
@@ -1582,6 +1269,36 @@ Override existing DataSet method</p>
 <span class="sd">    Override existing DataSet method</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.TextDataSet.__load" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Load dataset from external source as object from class TextDataSet
+Override existing DataSet method</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">175</span>
+<span class="normal">176</span>
+<span class="normal">177</span>
+<span class="normal">178</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class TextDataSet</span>
+<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1664,8 +1381,8 @@ Override existing DataSet method</p>
 
 
 
-<h2 id="scripts.class_framework.TimeSeriesDataSet" class="doc doc-heading">
-        <code>TimeSeriesDataSet</code>
+<h2 id="scripts.class_framework.QuantDataSet" class="doc doc-heading">
+        <code>QuantDataSet</code>
 
 
 </h2>
@@ -1673,67 +1390,67 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="#scripts.class_framework.DataSet">DataSet</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="../members/#scripts.class_framework.DataSet">DataSet</a></code></p>
 
   
-      <p>Subclass of base class DataSet for data of type Time Series</p>
+      <p>Subclass of base class DataSet for Quantitative Data types</p>
 
 
         <details class="quote">
           <summary>Source code in <code>scripts/class_framework.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">109</span>
-<span class="normal">110</span>
-<span class="normal">111</span>
-<span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span>
-<span class="normal">119</span>
-<span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span>
-<span class="normal">126</span>
-<span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span>
-<span class="normal">131</span>
-<span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span>
-<span class="normal">137</span>
-<span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">TimeSeriesDataSet</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Subclass of base class DataSet for data of type Time Series &#39;&#39;&#39;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">193</span>
+<span class="normal">194</span>
+<span class="normal">195</span>
+<span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span>
+<span class="normal">203</span>
+<span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span>
+<span class="normal">210</span>
+<span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span>
+<span class="normal">215</span>
+<span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span>
+<span class="normal">221</span>
+<span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">QuantDataSet</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Subclass of base class DataSet for Quantitative Data types &#39;&#39;&#39;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Instantiate object of class TimeSeriesDataSet.</span>
+<span class="sd">        Instantiate object of class QuantDataSet.</span>
 <span class="sd">        Inherited from base class DataSet</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass TimeSeriesDataSet has been instantiated&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QuantDataSet has been instantiated&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">        Read in TimeSeriesDataSet from existing CSV.</span>
+<span class="sd">        Read in QuantDataSet from existing .csv file.</span>
 <span class="sd">        Override existing DataSet method</span>
 <span class="sd">        &#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class TimeSeriesDataSet</span>
+        <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QuantDataSet</span>
 <span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
         <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
@@ -1741,13 +1458,13 @@ Override existing DataSet method</p>
         <span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">        Clean the dataset to appropriate standards</span>
 <span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been cleaned.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
 <span class="sd">        Override existing DataSet method</span>
 <span class="sd">        &#39;&#39;&#39;</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been explored.&quot;</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -1767,7 +1484,7 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.TimeSeriesDataSet.__init__" class="doc doc-heading">
+<h3 id="scripts.class_framework.QuantDataSet.__init__" class="doc doc-heading">
 <code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
@@ -1775,24 +1492,24 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
   
-      <p>Instantiate object of class TimeSeriesDataSet.
+      <p>Instantiate object of class QuantDataSet.
 Inherited from base class DataSet</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">112</span>
-<span class="normal">113</span>
-<span class="normal">114</span>
-<span class="normal">115</span>
-<span class="normal">116</span>
-<span class="normal">117</span>
-<span class="normal">118</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">196</span>
+<span class="normal">197</span>
+<span class="normal">198</span>
+<span class="normal">199</span>
+<span class="normal">200</span>
+<span class="normal">201</span>
+<span class="normal">202</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Instantiate object of class TimeSeriesDataSet.</span>
+<span class="sd">    Instantiate object of class QuantDataSet.</span>
 <span class="sd">    Inherited from base class DataSet</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass TimeSeriesDataSet has been instantiated&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QuantDataSet has been instantiated&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1803,37 +1520,7 @@ Inherited from base class DataSet</p>
 
 
 
-<h3 id="scripts.class_framework.TimeSeriesDataSet.__load" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
-
-</h3>
-
-
-  <div class="doc doc-contents ">
-  
-      <p>Load dataset from external source as object from class TimeSeriesDataSet
-Override existing DataSet method</p>
-
-      <details class="quote">
-        <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">127</span>
-<span class="normal">128</span>
-<span class="normal">129</span>
-<span class="normal">130</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class TimeSeriesDataSet</span>
-<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-      </details>
-  </div>
-
-</div>
-
-<div class="doc doc-object doc-function">
-
-
-
-<h3 id="scripts.class_framework.TimeSeriesDataSet.__readFromCSV" class="doc doc-heading">
+<h3 id="scripts.class_framework.QuantDataSet.__readFromCSV" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
@@ -1841,19 +1528,19 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
   
-      <p>Read in TimeSeriesDataSet from existing CSV.
+      <p>Read in QuantDataSet from existing .csv file.
 Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">120</span>
-<span class="normal">121</span>
-<span class="normal">122</span>
-<span class="normal">123</span>
-<span class="normal">124</span>
-<span class="normal">125</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">204</span>
+<span class="normal">205</span>
+<span class="normal">206</span>
+<span class="normal">207</span>
+<span class="normal">208</span>
+<span class="normal">209</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
-<span class="sd">    Read in TimeSeriesDataSet from existing CSV.</span>
+<span class="sd">    Read in QuantDataSet from existing .csv file.</span>
 <span class="sd">    Override existing DataSet method</span>
 <span class="sd">    &#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
@@ -1867,7 +1554,37 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.TimeSeriesDataSet.clean" class="doc doc-heading">
+<h3 id="scripts.class_framework.QuantDataSet.__load" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Load dataset from external source as object from class QuantDataSet
+Override existing DataSet method</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">211</span>
+<span class="normal">212</span>
+<span class="normal">213</span>
+<span class="normal">214</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QuantDataSet</span>
+<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.QuantDataSet.clean" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">clean</span><span class="p">()</span></code>
 
 </h3>
@@ -1880,15 +1597,15 @@ Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">132</span>
-<span class="normal">133</span>
-<span class="normal">134</span>
-<span class="normal">135</span>
-<span class="normal">136</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">216</span>
+<span class="normal">217</span>
+<span class="normal">218</span>
+<span class="normal">219</span>
+<span class="normal">220</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; </span>
 <span class="sd">    Clean the dataset to appropriate standards</span>
 <span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been cleaned.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1899,7 +1616,7 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.TimeSeriesDataSet.explore" class="doc doc-heading">
+<h3 id="scripts.class_framework.QuantDataSet.explore" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">explore</span><span class="p">()</span></code>
 
 </h3>
@@ -1912,15 +1629,15 @@ Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">138</span>
-<span class="normal">139</span>
-<span class="normal">140</span>
-<span class="normal">141</span>
-<span class="normal">142</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">222</span>
+<span class="normal">223</span>
+<span class="normal">224</span>
+<span class="normal">225</span>
+<span class="normal">226</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
 <span class="sd">    Override existing DataSet method</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass TimeSeriesDataSet has been explored.&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QuantDataSet has been cleaned.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -1939,8 +1656,8 @@ Override existing DataSet method</p>
 
 
 
-<h2 id="scripts.class_framework.kdTreeKNNClassifier" class="doc doc-heading">
-        <code>kdTreeKNNClassifier</code>
+<h2 id="scripts.class_framework.QualDataSet" class="doc doc-heading">
+        <code>QualDataSet</code>
 
 
 </h2>
@@ -1948,43 +1665,81 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.ClassifierAlgorithm" href="#scripts.class_framework.ClassifierAlgorithm">ClassifierAlgorithm</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.DataSet" href="../members/#scripts.class_framework.DataSet">DataSet</a></code></p>
 
   
-      <p>Subclass of base class ClassifierAlgorithm for a Simple KNN Classifier</p>
+      <p>Subclass of base class DataSet for Qualitative Data types</p>
 
 
         <details class="quote">
           <summary>Source code in <code>scripts/class_framework.py</code></summary>
-          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">282</span>
-<span class="normal">283</span>
-<span class="normal">284</span>
-<span class="normal">285</span>
-<span class="normal">286</span>
-<span class="normal">287</span>
-<span class="normal">288</span>
-<span class="normal">289</span>
-<span class="normal">290</span>
-<span class="normal">291</span>
-<span class="normal">292</span>
-<span class="normal">293</span>
-<span class="normal">294</span>
-<span class="normal">295</span>
-<span class="normal">296</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">kdTreeKNNClassifier</span><span class="p">(</span><span class="n">ClassifierAlgorithm</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Subclass of base class ClassifierAlgorithm for a Simple KNN Classifier &#39;&#39;&#39;</span>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">229</span>
+<span class="normal">230</span>
+<span class="normal">231</span>
+<span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span>
+<span class="normal">239</span>
+<span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span>
+<span class="normal">246</span>
+<span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span>
+<span class="normal">251</span>
+<span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span>
+<span class="normal">257</span>
+<span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">QualDataSet</span><span class="p">(</span><span class="n">DataSet</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Subclass of base class DataSet for Qualitative Data types &#39;&#39;&#39;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Initialize object of class kdTreeKNNClassifier&#39;&#39;&#39;</span>
-        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass kdTreeKNNClassifier has been instantiated.&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">        Instantiate object of class QualDataSet.</span>
+<span class="sd">        Inherited from base class DataSet</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QualDataSet has been instantiated&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Train kdTreeKNNClassifier using training data&#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">        Read in QualDataSet from existing .csv file.</span>
+<span class="sd">        Override existing DataSet method</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-        <span class="sd">&#39;&#39;&#39; Test simple kdTreeKNNClassifier on test data&#39;&#39;&#39;</span>
-        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QualDataSet</span>
+<span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">        Clean the dataset to appropriate standards</span>
+<span class="sd">        Override existing DataSet method&#39;&#39;&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
+<span class="sd">        Override existing DataSet method</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
         </details>
 
@@ -2004,25 +1759,32 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.kdTreeKNNClassifier.__init__" class="doc doc-heading">
-<code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
+<h3 id="scripts.class_framework.QualDataSet.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>Initialize object of class kdTreeKNNClassifier</p>
+      <p>Instantiate object of class QualDataSet.
+Inherited from base class DataSet</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">285</span>
-<span class="normal">286</span>
-<span class="normal">287</span>
-<span class="normal">288</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Initialize object of class kdTreeKNNClassifier&#39;&#39;&#39;</span>
-    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass kdTreeKNNClassifier has been instantiated.&quot;</span><span class="p">)</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">232</span>
+<span class="normal">233</span>
+<span class="normal">234</span>
+<span class="normal">235</span>
+<span class="normal">236</span>
+<span class="normal">237</span>
+<span class="normal">238</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    Instantiate object of class QualDataSet.</span>
+<span class="sd">    Inherited from base class DataSet</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass QualDataSet has been instantiated&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2033,23 +1795,30 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.kdTreeKNNClassifier.test" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+<h3 id="scripts.class_framework.QualDataSet.__readFromCSV" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>Test simple kdTreeKNNClassifier on test data</p>
+      <p>Read in QualDataSet from existing .csv file.
+Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">294</span>
-<span class="normal">295</span>
-<span class="normal">296</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Test simple kdTreeKNNClassifier on test data&#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">240</span>
+<span class="normal">241</span>
+<span class="normal">242</span>
+<span class="normal">243</span>
+<span class="normal">244</span>
+<span class="normal">245</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__readFromCSV</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    Read in QualDataSet from existing .csv file.</span>
+<span class="sd">    Override existing DataSet method</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__readFromCSV</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2060,23 +1829,90 @@ Override existing DataSet method</p>
 
 
 
-<h3 id="scripts.class_framework.kdTreeKNNClassifier.train" class="doc doc-heading">
-<code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+<h3 id="scripts.class_framework.QualDataSet.__load" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span></code>
 
 </h3>
 
 
   <div class="doc doc-contents ">
   
-      <p>Train kdTreeKNNClassifier using training data</p>
+      <p>Load dataset from external source as object from class QualDataSet
+Override existing DataSet method</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">290</span>
-<span class="normal">291</span>
-<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Train kdTreeKNNClassifier using training data&#39;&#39;&#39;</span>
-    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">247</span>
+<span class="normal">248</span>
+<span class="normal">249</span>
+<span class="normal">250</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">__load</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Load dataset from external source as object from class QualDataSet</span>
+<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__load</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.QualDataSet.clean" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">clean</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Clean the dataset to appropriate standards
+Override existing DataSet method</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">252</span>
+<span class="normal">253</span>
+<span class="normal">254</span>
+<span class="normal">255</span>
+<span class="normal">256</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">clean</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; </span>
+<span class="sd">    Clean the dataset to appropriate standards</span>
+<span class="sd">    Override existing DataSet method&#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.QualDataSet.explore" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">explore</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Conduct basic exploratory analysis on dataset
+Override existing DataSet method</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">258</span>
+<span class="normal">259</span>
+<span class="normal">260</span>
+<span class="normal">261</span>
+<span class="normal">262</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">explore</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Conduct basic exploratory analysis on dataset</span>
+<span class="sd">    Override existing DataSet method</span>
+<span class="sd">    &#39;&#39;&#39;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Data of subclass QualDataSet has been cleaned.&quot;</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2104,7 +1940,7 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
       <p class="doc doc-class-bases">
-        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.ClassifierAlgorithm" href="#scripts.class_framework.ClassifierAlgorithm">ClassifierAlgorithm</a></code></p>
+        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.ClassifierAlgorithm" href="../members/#scripts.class_framework.ClassifierAlgorithm">ClassifierAlgorithm</a></code></p>
 
   
       <p>Subclass of base class ClassifierAlgorithm for a Simple KNN Classifier</p>
@@ -2189,6 +2025,33 @@ Override existing DataSet method</p>
 
 
 
+<h3 id="scripts.class_framework.simpleKNNClassifier.train" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Train simpleKNNClassifier using training data</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">273</span>
+<span class="normal">274</span>
+<span class="normal">275</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Train simpleKNNClassifier using training data&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
 <h3 id="scripts.class_framework.simpleKNNClassifier.test" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
 
@@ -2212,11 +2075,113 @@ Override existing DataSet method</p>
 
 </div>
 
+
+
+  </div>
+
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-class">
+
+
+
+<h2 id="scripts.class_framework.kdTreeKNNClassifier" class="doc doc-heading">
+        <code>kdTreeKNNClassifier</code>
+
+
+</h2>
+
+
+  <div class="doc doc-contents ">
+      <p class="doc doc-class-bases">
+        Bases: <code><a class="autorefs autorefs-internal" title="scripts.class_framework.ClassifierAlgorithm" href="../members/#scripts.class_framework.ClassifierAlgorithm">ClassifierAlgorithm</a></code></p>
+
+  
+      <p>Subclass of base class ClassifierAlgorithm for a Simple KNN Classifier</p>
+
+
+        <details class="quote">
+          <summary>Source code in <code>scripts/class_framework.py</code></summary>
+          <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">282</span>
+<span class="normal">283</span>
+<span class="normal">284</span>
+<span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span>
+<span class="normal">289</span>
+<span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span>
+<span class="normal">293</span>
+<span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">class</span> <span class="nc">kdTreeKNNClassifier</span><span class="p">(</span><span class="n">ClassifierAlgorithm</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Subclass of base class ClassifierAlgorithm for a Simple KNN Classifier &#39;&#39;&#39;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Initialize object of class kdTreeKNNClassifier&#39;&#39;&#39;</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass kdTreeKNNClassifier has been instantiated.&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Train kdTreeKNNClassifier using training data&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39; Test simple kdTreeKNNClassifier on test data&#39;&#39;&#39;</span>
+        <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+        </details>
+
+  
+
+  <div class="doc doc-children">
+
+
+
+
+
+
+
+
+
 <div class="doc doc-object doc-function">
 
 
 
-<h3 id="scripts.class_framework.simpleKNNClassifier.train" class="doc doc-heading">
+<h3 id="scripts.class_framework.kdTreeKNNClassifier.__init__" class="doc doc-heading">
+<code class="highlight language-python"><span class="fm">__init__</span><span class="p">()</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Initialize object of class kdTreeKNNClassifier</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">285</span>
+<span class="normal">286</span>
+<span class="normal">287</span>
+<span class="normal">288</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Initialize object of class kdTreeKNNClassifier&#39;&#39;&#39;</span>
+    <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Object of subclass kdTreeKNNClassifier has been instantiated.&quot;</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.kdTreeKNNClassifier.train" class="doc doc-heading">
 <code class="highlight language-python"><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
 
 </h3>
@@ -2224,15 +2189,42 @@ Override existing DataSet method</p>
 
   <div class="doc doc-contents ">
   
-      <p>Train simpleKNNClassifier using training data</p>
+      <p>Train kdTreeKNNClassifier using training data</p>
 
       <details class="quote">
         <summary>Source code in <code>scripts/class_framework.py</code></summary>
-        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">273</span>
-<span class="normal">274</span>
-<span class="normal">275</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
-    <span class="sd">&#39;&#39;&#39; Train simpleKNNClassifier using training data&#39;&#39;&#39;</span>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">290</span>
+<span class="normal">291</span>
+<span class="normal">292</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">train</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Train kdTreeKNNClassifier using training data&#39;&#39;&#39;</span>
     <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">train</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+</code></pre></div></td></tr></table></div>
+      </details>
+  </div>
+
+</div>
+
+<div class="doc doc-object doc-function">
+
+
+
+<h3 id="scripts.class_framework.kdTreeKNNClassifier.test" class="doc doc-heading">
+<code class="highlight language-python"><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span></code>
+
+</h3>
+
+
+  <div class="doc doc-contents ">
+  
+      <p>Test simple kdTreeKNNClassifier on test data</p>
+
+      <details class="quote">
+        <summary>Source code in <code>scripts/class_framework.py</code></summary>
+        <div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal">294</span>
+<span class="normal">295</span>
+<span class="normal">296</span></pre></div></td><td class="code"><div><pre><span></span><code><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
+    <span class="sd">&#39;&#39;&#39; Test simple kdTreeKNNClassifier on test data&#39;&#39;&#39;</span>
+    <span class="k">return</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">test</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
       </details>
   </div>
@@ -2260,7 +2252,7 @@ Override existing DataSet method</p>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href=".." class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../classindex/" class="btn btn-neutral float-right" title="Class Index">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../hierarchy/" class="btn btn-neutral float-right" title="Class Hierarchy">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -2286,7 +2278,7 @@ Override existing DataSet method</p>
       <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../classindex/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../hierarchy/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
