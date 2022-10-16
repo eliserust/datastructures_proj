@@ -21,27 +21,58 @@ class DataSet:
         TextDataSet, QuantDataSet, QualDataSet.
     Subclasses define type of DataSet, instantiate the DataSet class, and
         override attributes and methods for specific data types.
+    We assume that data is loaded as a CSV because that is the most common 
+        format. If necessary, other data types will be loaded.
     '''
     def __init__(self, filename):
-        ''' Initialize object of class Data using __readFromCSV and __load methods '''
-        self.filename = filename
-        print("Object of superclass DataSet has been initialized")
-    
-    def __readFromCSV(self, filename):
-        ''' Load dataset from external source as object from class DataSet'''
-        print("Data of superclass DataSet has been read in from CSV")
+        ''' 
+        Initialize object of class Data using __readFromCSV and __load methods 
+        Prompt users to enter the name of the file.
+        '''
+        filename = input('Enter the name of the file to read.')
+        self.filename = filename # Member attribute filename
+        self.data = self.load(filename) # Load data via readFromCSV
 
-    def __load(self,filename):
+    
+    def readFromCSV(self, filename):
         ''' Load dataset from external source as object from class DataSet'''
-        print("Data of superclass DataSet has been loaded.")
+        # Open file and read into a list of lists
+        with open(filename) as file:
+            content = file.readlines()
+            
+        # Convert list of lists to dictionary
+        mydict = {}
+        keys = content[0]
+        keys = keys.split(',')
+        for row in content[1:]:
+            data = row.split(',')
+            for i in range(len(data)):
+                key = keys[i]
+                if key not in mydict:
+                    mydict[key] = list()
+                mydict[key].append(data[i])
+        return mydict
+
+    def load(self,filename):
+        ''' Load dataset from external source as object from class DataSet
+        Prompt users to enter the name of the file.
+        '''
+        # Open file and read into a list of lists
+        with open(filename) as file:
+            content = file.readlines()
+
+        return content
 
     def clean(self):
         ''' Clean the dataset to appropriate standards'''
-        print("Data of superclass DataSet has been cleaned")
+        print("Data of superclass DataSet will be cleaned specific to the datatype.")
+        print("Please create an object of a subclass of DataSet to clean.")
+        
 
     def explore(self):
         ''' Conduct basic exploratory analysis on dataset'''
-        print("Data of superclass DataSet has been explored.")
+        print("Data of superclass DataSet will be explored specific to the datatype.")
+        print("Please create an object of a subclass of DataSet to explore.")
 
 
 class ClassifierAlgorithm:
@@ -117,18 +148,19 @@ class TimeSeriesDataSet(DataSet):
         super().__init__(filename)
         print("Object of subclass TimeSeriesDataSet has been instantiated")
     
-    def __readFromCSV(self, filename):
+    def readFromCSV(self, filename):
         ''' 
         Read in TimeSeriesDataSet from existing CSV.
         Override existing DataSet method
         '''
-        return super().__readFromCSV(filename)
+        return super().readFromCSV(filename)
     
-    def __load(self, filename):
+    def load(self, filename):
         ''' Load dataset from external source as object from class TimeSeriesDataSet
         Override existing DataSet method'''
-        return super().__load(filename)
+        return super().load(filename)
     
+
     def clean(self):
         ''' 
         Clean the dataset to appropriate standards
@@ -170,12 +202,12 @@ class TextDataSet(DataSet):
         Read in TextDataSet from existing .txt file.
         Override existing DataSet method
         '''
-        return super().__readFromCSV(filename)
+        return super().readFromCSV(filename)
     
     def __load(self, filename):
         ''' Load dataset from external source as object from class TextDataSet
         Override existing DataSet method'''
-        return super().__load(filename)
+        return super().load(filename)
     
     def clean(self):
         ''' 
@@ -199,25 +231,25 @@ class QuantDataSet(DataSet):
         Inherited from base class DataSet
         '''
         super().__init__(filename)
-        print("Object of subclass QuantDataSet has been instantiated")
     
     def __readFromCSV(self, filename):
         ''' 
         Read in QuantDataSet from existing .csv file.
         Override existing DataSet method
         '''
-        return super().__readFromCSV(filename)
+        return super().readFromCSV(filename)
     
     def __load(self, filename):
         ''' Load dataset from external source as object from class QuantDataSet
         Override existing DataSet method'''
-        return super().__load(filename)
+        return super().load(filename)
     
     def clean(self):
         ''' 
         Clean the dataset to appropriate standards
         Override existing DataSet method'''
-        print("Data of subclass QuantDataSet has been cleaned.")
+        # Fill in missing values with mean
+
     
     def explore(self):
         ''' Conduct basic exploratory analysis on dataset
@@ -242,12 +274,12 @@ class QualDataSet(DataSet):
         Read in QualDataSet from existing .csv file.
         Override existing DataSet method
         '''
-        return super().__readFromCSV(filename)
+        return super().readFromCSV(filename)
     
     def __load(self, filename):
         ''' Load dataset from external source as object from class QualDataSet
         Override existing DataSet method'''
-        return super().__load(filename)
+        return super().load(filename)
     
     def clean(self):
         ''' 

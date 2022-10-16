@@ -10,9 +10,7 @@ from class_framework import (DataSet, QuantDataSet, QualDataSet,
                                         TextDataSet, TimeSeriesDataSet)
 
 def DataSetTests():
-    print("DataSet Instantiation invokes both the __load() and the\
-__readFromCSV() methods....")
-    data = DataSet("sample_file.ext")
+    data = DataSet("quant_data.csv")
     print("Check ABC member attributes...")
     print("DataSet.filename:", data.filename)
     print("==============================================================")
