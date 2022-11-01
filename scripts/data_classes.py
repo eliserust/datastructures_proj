@@ -181,7 +181,15 @@ class QualDataSet(DataSet):
         Read in QualDataSet from existing .csv file.
         Override existing DataSet method
         '''
-        return super().readFromCSV(filename)
+        # Read in contents
+        with open(filename) as f:
+            reader = csv.DictReader(f) # Use DictReader from csv package
+
+            data = [] # Initialize data list
+            for row in reader:
+                data.append(row) # Append each row of data dict to list
+        
+        return data
     
     def load(self, filename):
         ''' Load dataset from external source as object from class QualDataSet
@@ -385,7 +393,9 @@ class TextDataSet(DataSet):
             for tok in toks_nostop:
                 if type(tok) == int: # If word is a number
                     tok = '#' # Replace with hash #
-            return " ".join(toks_nostop)
+                element["clean_text"] = (" ".join(toks_nostop))
+        
+        return self.data
 
 
     

@@ -12,6 +12,24 @@
 #* given nor received any assistance on this project other than 
 #* the TAs, professor, textbook, and teammates.
 
+#### Import packages
+import csv
+import nltk
+from nltk.stem import PorterStemmer
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
+import numpy as np
+import matplotlib.pyplot as plt
+import os
+from datetime import datetime
+from cmath import isnan
+import wordcloud
+from wordcloud import WordCloud
+from collections import Counter
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.feature_extraction.text import CountVectorizer
+import scipy.spatial
+from scipy.stats import mode
 
 class DataSet:
     ''' 
@@ -84,17 +102,28 @@ class ClassifierAlgorithm:
     Subclasses define
     '''
 
-    def __init__(self):
-        ''' Initialize object of class ClassifierAlgorithm'''
-        print("Object of superclass ClassifierAlgorithm has been initialized.")
+    def __init__(self, labels="", predictors=None):
+        ''' Initialize object of class ClassifierAlgorithm
+        
+        labels: STR, optional
+            Key value for column containing the labels
+        predictors: LIST, optional
+            Key values of all columns to be used as predictors.
+            If no value is given, then all variables will be used.
+        '''
 
-    def train(self, data):
+        self.labels = labels
+        self.predictors=predictors
+        print("Object of class ClassifierAlgorithm has been instantiated.")
+
+    def train(self, trainingData):
         ''' Train ClassifierAlgorithm using training data'''
-        print(f'{data} has been trained for the classifier algorithm.')
+        print(f'{trainingData} has been trained for the classifier algorithm.')
 
-    def test(self, data):
+    def test(self, testData, k):
         ''' Test ClassifierAlgorithm on test data'''
-        print(f'The classifier algorithm has been tested with {data}.')
+        print(f'The classifier algorithm has been tested with {testData}.')
+
 
 
 class Experiment:
@@ -105,17 +134,20 @@ class Experiment:
     relevant accuracy metrics and evaluation plots.
     '''
 
-    def __init__(self, data, classifiers):
+    def __init__(self, data, labels, classifiers):
         ''' Initialize object of class Experiment
         
         Parameters:
 
         data: DataSet
             DataSet to run experiment on.
+        labels: list
+            True labels
         classifiers: list
             List of ClassifierAlgorithms to experiment with.
         '''
         self.data = data
+        self.labels = labels
         self.classifiers = classifiers
         print("Object of class Experiment has been instantiated.")
 
@@ -125,17 +157,58 @@ class Experiment:
         
         k : Number of groups to split data sample into
         '''
-        print("Cross Validation has been run")
+        # Split dataset into k folds
+        folds = np.array_split(self.data, k)
+        folds_labels = np.array_split(self.labels, k)
 
-    def score(self):
+        # Initialize output matrix numSamples x numClassifiers
+        output = np.zeros((len(folds), len(self.classifiers)), dtype=np.ndarray)
+
+        # Iterate over folds:
+        ## Use fold i as test set, and the other k-1 as training
+        for i in range(k):
+            test_data = folds[i]
+            train_data = folds[:i]+folds[i+1:]
+
+            # Loop through classifiers
+            for j, classifier in enumerate(self.classifiers):
+                # Train data
+                classifier.train(self.data, self.labels)
+                
+                # Test all classifiers
+                y_predict = np.array(classifier.test(self.data, 10)) 
+
+                # Append to matrix 'output'
+                output[i, j] = y_predict
+        
+        # Take average of all folds for each label
+        output = np.mean(output, axis=0)
+
+        return output
+
+
+    def score(self, trueLabels, predictedLabels):
         ''' Returns the accuracy score of each classifier (# of correct predictions/total samples)'''
-        print("The accuracy score has been generated.")
+        score = np.mean(trueLabels != predictedLabels)
+        return score
 
-    def confusionMatrix(self):
+    def confusionMatrix(self, trueLabels, predictedLabels):
         ''' Generates a confusion matrix for a given classifier, illustrating how many predictions
         were correct by class.
         '''
-        print("The confusion matrix has been generated.")
+        # Get the unique classes
+        classes = np.unique(trueLabels)
+
+        # Create an empty confusion matrix of the correct dimensions
+        cMatrix = np.zeros((len(classes), len(classes)))
+
+        # Fill confusion matrix
+        ## Count number of instances of each class correctly and incorrectly predicted
+        for i in range(len(classes)):
+            for j in range(len(classes)):
+                cMatrix[i,j] = np.sum((trueLabels==classes[i]) & (predictedLabels==classes[j]))
+
+        return cMatrix
 
 
 class QuantDataSet(DataSet):
@@ -478,18 +551,60 @@ class TextDataSet(DataSet):
 class simpleKNNClassifier(ClassifierAlgorithm):
     ''' Subclass of base class ClassifierAlgorithm for a Simple KNN Classifier '''
 
-    def __init__(self):
+    def __init__(self, labels=0, predictors=None):
         ''' Initialize object of class simpleKNNClassifier'''
         super().__init__()
         print("Object of subclass simpleKNNClassifier has been instantiated.")
     
-    def train(self, data):
-        ''' Train simpleKNNClassifier using training data'''
-        return super().train(data)
+    def to_tfidf(self, dataset, column):
+        ''' Turn text into TFIDF Vectorizer format for KNN Classification'''
+        data = []
+        for element in dataset:
+            data.append(element[column]) # Get all clean text into a list
+        cv = CountVectorizer() # Initialize count vectorizer
+        word_count_vector = cv.fit_transform(data).toarray() # Fit to data
+        tfidf_transformer=TfidfTransformer(smooth_idf=True,use_idf=True) 
+        tfidf_words = tfidf_transformer.fit_transform(word_count_vector).toarray()
+        return tfidf_words
+
+    def train(self, trainingData, trueLabels):
+        ''' Train simpleKNNClassifier using training data
+        
+        Store the data and labels member attributes
+        '''
+        self.trainingData = trainingData
+        self.trueLabels = trueLabels
     
-    def test(self, data):
-        ''' Test simple KNNClassifier on test data'''
-        return super().test(data)
+    def test(self, testData, k):
+        ''' Test simple KNNClassifier on test data
+        
+        Find the k closest training samples and return the mode of the k labels
+        associated from the k closest training samples.
+
+        testData: ARRAY of data to be used to calculate KNN
+        k: INT 
+
+        Returns: Predicted labels stored in a member attribute
+        '''
+        # For each element of data
+        predicted_labels = [] # Initialize list of predicted labels
+        for i in range(len(testData)):
+            # Find k closest samples using Euclidean Distance
+            distances = [] # Store distances of of all other points
+            for j in range(len(self.trainingData)):
+                d = np.linalg.norm(self.trainingData[j] - testData[i])
+                label = self.trueLabels[j]
+                distances.append([float(d), int(label)]) # Append individual distance
+            
+            distances = np.array(distances)
+            dist_sort = np.sort(distances)[:k] # Sort and keep k 
+            
+            # Calculate mode of the k labels
+            lab = mode(dist_sort) 
+            lab = lab.mode[0][1]
+            predicted_labels.append(lab) # Append to predicted labels list
+
+        return predicted_labels
 
 
 class kdTreeKNNClassifier(ClassifierAlgorithm):

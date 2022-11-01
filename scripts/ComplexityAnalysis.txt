@@ -1,0 +1,58 @@
+ANLY 555
+Project Deliverable #3
+Computational Complexity Analysis
+
+
+1) simpleKNNClassifier test method
+	a) Space count function S(n)
+		line 1: 1 (initialize empty list predicted_labels)
+		line 2:	n (testData of length n)
+		line 3: 1 (initialize empty list distances)
+		line 4: m (trainingData of length m)
+		line 5: 1 (store Euclidean distance in new variable d)
+		line 6: 1 (store label in new var)
+		line 7: 1 (expanding space of distance by 1)
+		line 8: 0 (no new data stored)
+		line 9: 0 (Quicksort algorithm)
+		line 10: 1 (Store mode of labels)
+		line 11: 1 (get element of mode output)
+		line 12: 1 (expanding space of predicted_labels by 1)
+	b) Step count function T(n)
+		line 1: 1 (initialize empty list predicted_labels)
+		line 2:	n (loop through testData of length n)
+		line 3: 1 (initialize empty list distances)
+		line 4: m (loop through training data of length m)
+		line 5: 2m + 1 (calculating euclidean distance)
+		line 6: 1 (assign jth element to label)
+		line 7: 4 (change data types (x2), turn to list, append to distance)
+		line 8: 1 (convert distances to array)
+		line 9: n*log(n) + 1 (Quicksort algorithm + subset k elements)
+		line 10: n (Take mode of labels)
+		line 11: 1 (get element of mode output)
+		line 12: 1 (append label to list of labels)
+	c) Tight-fit upper bound using Big-O Notation
+		O(n*log(n))
+
+2) Experiment score method
+	a) Space count function S(n)
+		line 1: 1 (store score in new variable)
+	b) Step count function T(n)
+		line 1: n+1 (find all elements that don't align, arithmetic mean)
+	c) Tight-fit upper bound using Big-O Notation
+		O(n)
+
+3) Experiment confusion matrix
+	a) Space count function S(n)
+		line 1: 1 (object classes)
+		line 2:	1 (object cMatrix)
+		line 3: 1 ()
+		line 4: m ()
+		line 5: 1 ()
+	b) Step count function T(n)
+		line 1: n*log(n) (get unique classes of array of length n)
+		line 2:	3 (Get length of classes, create new matrix, assign to cMatrix)
+		line 3: m (loop length of classes)
+		line 4: m (loop length of classes)
+		line 5: 2m + 1 (boolean operations, np.sum() and assignment op)
+	c) Tight-fit upper bound using Big-O Notation
+		O(n*log(n))
