@@ -50,7 +50,7 @@ class DataSet:
     
     def readFromCSV(self, filename):
         ''' Load dataset from external source as object from class DataSet'''
-        # Open file and read into a list of lists
+       # Open file and read into a list of lists
         with open(filename) as file:
             content = file.readlines()
             
@@ -434,3 +434,66 @@ class TextDataSet(DataSet):
         axs[1].set_ylabel("Frequency")
         axs[1].set_title("10 Most common words")
         plt.show()
+
+class HeterogeneousDataSet():
+    ''' Subclass of base class DataSet for composition of DataSet Objects '''
+
+    def __init__(self, list_of_DataSets, list_of_filenames):
+        ''' 
+        Instantiate object of class HeterogeneousDataSet.
+        Inherited from base class DataSet
+
+        Parameters:
+
+        list_of_DataSets: list
+            List or collection of other datasets from alternative DataSet classes (i.e. qualData or quantData or TextData)
+        '''
+        self.DataSetNames = list_of_DataSets
+        self.filenames = list_of_filenames
+    
+    
+    def load_datasets(self):
+        '''
+        Call the load methods for each dataset in self.datasets
+        '''
+        print("The list of filenames are: ", self.filenames)
+        print("Loading DataSets requires user input. Please print the filenames one by one in sequence when prompted")
+
+        self.DataSetObjects = [] # List to hold instantiated DataSet Classes
+        self.data = [] # List to hold data for each DataSet Class
+        for i in self.DataSetNames:
+            f = i('data/qual_data.csv') # Placeholder filename --> real filenames get inputted
+            self.DataSetObjects.append(f)
+            self.data.append(f.data)
+        
+        return self.data
+
+    def clean(self):
+        '''
+        Call the clean methods from each of the individual datasets in self.datasets
+        '''
+        for data_class in self.DataSetObjects:
+            data_class.clean()
+
+    def explore(self):
+        '''
+        Call the explore methods from each of the individual datasets in self.datasets
+        '''
+        for data_class in self.DataSetObjects:
+            print(data_class.explore())
+
+    def select(self, dataset):
+        '''
+        Select only  one of the constituent datasets
+        
+        Parameters:
+        dataset: str
+            The dataset you wish to select.
+        
+        '''
+        
+        self.DataSetNames = [x for x in self.DataSetNames if x == dataset] # Reset member attribute to only include dataset of choice
+        self.data = self.load_datasets() # Reload datasets to reset self.data and self.DataSetObjects
+
+        return self.DataSetNames
+        

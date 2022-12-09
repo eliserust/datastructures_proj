@@ -29,7 +29,7 @@ from collections import Counter
 import scipy.spatial
 from scipy.stats import mode
 
-
+from tree_node import *
 
 class ClassifierAlgorithm:
     ''' 
@@ -153,6 +153,87 @@ class simpleKNNClassifier(ClassifierAlgorithm):
 
         return predicted_prob
 
+class Node(object):
+    def __init__(self, data):
+        self.data = data
+        self.children = []
+    
+    def add_child(self, obj):
+        self.children.append(obj)
+
+
+class kdTreeKNNClassifier(ClassifierAlgorithm, Tree):
+    '''Subclass of base class ClassifierAlgorithm for a kdTreeKNNClassifier'''
+
+    def __init__(self, labels=0, predictors=None):
+        ''' Initialize object of class kdTreeKNNClassifier'''
+        super().__init__()
+        print("Object of subclass kdTreeKNNClassifier has been instantiated.")
+    
+    def split(arr, cond):
+        return [arr[cond], arr[~cond]]
+
+    def train(self, trainingData, axis):
+        ''' Train kdTreeKNNClassifier using training data
+        
+        Build kdTree
+        '''
+        # Sort data
+        data = sorted(data, key=lambda x: x[axis])
+        data = np.array(data) # make sure it's array format
+
+        # Identify median of data
+        midpoint = len(data)//2
+        median = data[midpoint]
+
+        # Remove median from data
+        data = np.delete(data, midpoint, 0)
+
+        # Create node with median point
+        point = Node(median)
+
+        # Split data into > median or < median
+        left_half = self.split(data, data[:,0]<=median[0])[0]
+        right_half = self.split(data, data[:,0]<=median[0])[1]
+    
+    def _Searchtree_(self, treeroot, test_point):
+        ''' Test kdTree KNNClassifier on test data
+        
+        For a given test_point, search the kdTree, record the search path, and identify the point closest to the test point.
+        Read the category information of the nearest point and assign its label to the test point.
+
+        treeroot: the root of a KD-tree
+        test_point: a point of test data
+
+        Returns: Predicted label of the test_data
+        '''
+        pass
+        # while (root is not a leaf):
+        #     searchPath.add(root)
+        #     root[axis] > test_point[axis] ? _Searchtree_(rightChild):_Searchtree_(leftChild)
+        
+        # for point in searchPath:
+        #     nearest_dist <- compute_distance(point, test_point)
+        #     if (|point[axis] - test_point[axis]|) > (|test_point[axis]-root[axis]|):
+        #         travel(root.nextchild)
+        #         dis <- compute_distance (childpoint, test_point)
+        #         if dis < nearest_dis:
+        #             nearest_dist = dis 
+        
+        # predict_label = nearest_point.label
+        # return predict_label
+
+
+    def test(self, testingData):
+        '''For each point in the testing dataset, call the private point_classification member method'''
+        
+        predicted_labels = []
+
+        for point in testingData:
+            label = self._Searchtree_(point)
+            predicted_labels.append(label)
+        
+        return label
 
 
 class Experiment:
@@ -310,51 +391,3 @@ class Experiment:
             plt.ylabel('True Positive Rate')
             plt.legend()
         plt.show()
-
-
-
-
-### Couldn't complete for this assignment. To do in the future.
-class decisionTreeClassifier(ClassifierAlgorithm):
-    ''' Subclass of base class ClassifierAlgorithm for a Decision Tree Classifier '''
-
-    def __init__(self,labels,data,impurity, depth, node_type):
-        ''' Initialize object of class simpleKNNClassifier'''
-        self.labels = labels # Y label
-        self.data = data # Array of data for node
-        self.impurity = impurity # Get gini_impurity or InformationGain for node
-        self.features = self.data[0].keys()
-        self.depth = depth
-        self.counts = Counter(self.labels) # Get counts of labels in the node
-        self.n = len(labels) # How many samples in this node
-        self.best_feature = None # Initialize best_split parameters
-        self.best_value = None
-        self.left = None # Initialize child nodes
-        self.right = None
-        self.node_type = node_type # Indicate if the node is the root node
-        print("Object of subclass decisionTreeClassifier has been instantiated.")
-    
-
-    def train(self, trainingData, trueLabels):
-        ''' Train decisionTreeClassifier using training data
-        
-        Recursively grow the tree
-        Be able to classify both qualitative and quantitative data
-        '''
-        self.trainingData = trainingData
-        self.trueLabels = trueLabels
-    
-    def predict_observation(self, values: dict):
-        '''
-        Predict the label of an individual element given a set of features 
-        '''
-        pass
-
-    def test(self, testData, k):
-        ''' Test decisionTreeClassifier on test data
-
-        testData: ARRAY of data to be classified
-
-        Returns: Predicted labels stored in a member attribute
-        '''
-        pass
